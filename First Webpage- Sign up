@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">  <!--META DATA-->
+<meta http-equiv="X-UA-Compatible"content="IE=Edge">
+<meta name="viewport" content="width=device width, initial-scale=1.0">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<title>Sign up fresh</title> <!--TITLE-->
+
+<style>
+
+*{margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body{
+      font-family: 'PT Serif', serif;
+      background-image:url(./images/signup1.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+     /* height: calc(100vh - 80px); */
+      height: 100vh; 
+ }
+
+.navbar{
+        background: black;
+        height: 80px;
+        width: 100%;
+       }
+nav{
+    background: black;
+    height: 80px;
+    width: 100%;
+ }
+ 
+nav ul{
+    float: right;
+    margin-right: 33vw;      /* POSITION CONTROL OF HOME, ABOUT, CONTACT, LOGIN */
+}
+nav ul li{
+    display: inline-block;
+     line-height: 80px;
+     margin: 0 5px;
+}
+nav ul li a{
+     color: white;
+     font-size: 17px;
+     padding: 7px 25px;
+     border-radius: 3px;
+     text-transform: uppercase;
+      text-decoration: none;
+     list-style: none;
+     box-sizing: border-box;
+}
+a.active,a:hover{
+        background: none;
+        color: gray;
+       transition: .5s;
+}
+.checkbtn{
+font-size: 30px;
+color: white;
+float:right;
+line-height: 80px;
+margin-right: 40px;
+cursor: pointer;
+}
+#check{
+  display: none;
+}
+
+
+@media (max-width: 900px){
+nav ul li a{
+    font-size: 16px;
+}
+}
+@media (max-width: 800px){
+     .checkbtn{
+        display: block;
+}
+ul{
+   position: fixed; 
+   width: 100%;
+   height: 100vh;
+   background-image: url(./images/sliding3.png);    /* SLIDING PROPERTY */
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
+   top: 80px;
+   left: -100%;
+   text-align: center;
+   transition: all .7s;
+}
+nav ul li{
+display: block;
+margin: 10vw 0;
+line-height: 1vh;   /* POSITION CONTROL OF SLIDING ITEMS */
+}
+nav ul li a{
+font-size: 3vw;
+}
+a:hover, a.active{
+  background: none;
+  color: yellow;
+}
+ #check:checked ~ ul{
+  left: 0; 
+}
+}
+
+
+
+ /* body:after{
+    position: absolute;
+    content: '';                      PENDING 
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+}*/
+
+
+.content{
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+     text-align: center;
+    z-index: 50;
+    width: 20vw;                               
+    text-align: center;
+    padding: 8vh 3vw;
+    background: rgba(255,255,255,0.04);
+    box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
+}
+.content p{
+    color: black;
+   font-size: 3vh;            /* CREATE ACCOUNT TEXT */        
+   font-weight:600;
+   margin: 0 0 5vh 0;
+   font-family: cambria;
+}
+.field{
+   position: relative;
+   height: 5vh;                            /* CREATE ACCOUNT BOX & USER ID PASSWORD HEIGHT */
+   width: 15vw;
+   display: flex;
+   background: rgba(255,255,255,0.94);
+}
+
+.field span{
+   color: gray;          /* JAVA SCRIPT LOGO */  
+   width: 2vw;
+   line-height: 45px;
+}
+
+
+.field input{
+   height: 100%;
+   width: 100%;
+   background: transparent:
+   border: none;
+   outline: none;
+   color: black;
+   font-size: 1.7vh;
+   font-family: cambria;
+}
+.show{
+    position: absolute;
+    right: 0.5vw;           /* POSITION OF SHOW BUTTON */  
+    font-size: 1.5vh;
+    font-weight: 700;
+    color: gray;
+    cursor: pointer;
+    display: none;
+    font-family: cambria;
+}
+.password:valid ~ .show{
+    display: block;
+}
+
+
+.space{
+   margin-top: 2vh;   
+}
+.space1{
+  margin-top: 2vh; 
+}
+.pass{
+   text-align: left;
+   margin: 10px 0;
+}
+.pass a{
+   color: white;
+   font-family:'cambria';
+   text-decoration: none;
+}
+.pass:hover a{
+   text-decoration: underline;
+}
+input[type="submit"]{
+   background: blue;
+   border: 1px solid white;
+   color: white;
+   font-size: 2vh;
+   letter-spacing: 1px;
+   font-weight: 500;
+   cursor: pointer; 
+   font-family: cambria;
+}
+
+input[type="submit"]:hover{
+    background: gray;
+}
+
+.login{
+    color: white;
+    margin: 1vh 0;
+    font-family: cambria;
+    }
+.link{
+    display: flex;
+    cursor: pointer;
+    color: white;
+    margin: 0 0 2vh 0;
+}
+.facebook, .instagram{
+     width: 100%;
+     height: 4vh;
+     line-height: 3.5vh;
+     margin-top: 1vh;       
+     margin-left: 1vw;
+  }
+.facebook{
+     margin-left: 0px;
+     background: blue;
+     border: 1px solid black;
+}
+.instagram{
+     background: pink;
+     border: 1px solid black;
+}
+.link i{
+     font-size: 1.5vh;
+}
+.link span{
+     font-size: 1.5vh;
+     margin-left: 1vw;
+     letter-spacing: 1px;
+     font-weight: 500; 
+     font-family: cambria;
+}
+.signup{
+     color:white;
+     font-size: 1.5vh;
+     font-family: cambria;
+}
+.signup a{
+      color: violet;
+      text-decoration: none;
+}
+.signup a:hover{
+       text-decoration: underline;
+}
+
+ </style>
+</head>
+
+<body>
+<header>
+<nav>
+
+<input type="checkbox" id="check">
+<label for="check" class="checkbtn">
+<i class="fas fa-bars"></i>
+</label>
+
+<ul>
+<li><a class="" href="file:///D:/SK/my%20website/Wabpage%201/1.Home%20fresh.html">Home</a></li>
+<li><a class="" href="#">About</a></li>
+<li><a class="" href="file:///D:/SK/my%20website/Wabpage%201/2.Contact%20us%20fresh.html">Contact</a></li>
+<li><a class="" href="file:///D:/SK/my%20website/Wabpage%201/3.Login%20fresh.html">Login</a></li>
+<li><a class="active" href="file:///D:/SK/my%20website/Wabpage%201/4.Sign%20up%20fresh.html">Sign Up</a></li>
+</ul>
+</nav>
+</header>
+
+
+<!--<div class="bg-img"> -->
+ <div class="content">
+   <p>Create an Account</p>
+   <form action="#">
+     
+      <div class="field">
+      <input type="text" required placeholder="First Name">
+     </div>
+       <br>
+
+       <div class="field">
+      <input type="text"  placeholder="Middle Name">
+     </div>
+       <br>
+
+       <div class="field">
+      <input type="text" required placeholder="Last Name">
+     </div>
+       <br>
+
+     <div class="field">
+      <span class="fas fa-envelope-square"></span>
+      <input type="text" required placeholder="Email or Phone">
+     </div>
+       <br>
+     <div class="field">
+      <span class="fa fa-user"></span>
+      <input type="text" required placeholder="User ID">
+     </div>
+    
+     <div class="field space">
+      <span class="fa fa-lock"></span>
+      <input type="password" class="password" required placeholder="Password">
+      <span class="show">Show</span>
+     </div>
+    
+      <div class="field space1">
+      <span class="fa fa-lock"></span>
+      <input type="password" class="password1" required placeholder="Re-enter your password">
+       </div>
+    
+      <br>
+     <div class="field">
+       <input type="submit" value="Create">
+      </div>
+   
+     <div class="login">Use your social account</div>
+     <div class="link">
+       <div class="facebook">
+       <i class="fab fa-facebook-f"><span>Facebook</span></i>
+       </div>
+     
+       <div class="instagram">
+       <i class="fab fa-instagram"><span>Instagram</span></i>
+       </div>
+     </div>
+     <div class="signup">Already have account?
+       <a href="file:///D:/SK/my%20website/Login%20fresh.html">Login Now</a>
+     </div>
+      
+</form>
+</div>
+
+<script>
+   const pass_field = document.querySelector('.password');
+   const show_btn = document.querySelector('.show');
+   show_btn.addEventListener('click', function(){
+       if(pass_field.type === "password"){
+          pass_field.type = "text";
+          show_btn.style.color = "gray";
+          show_btn.textContent = "Hide";
+   
+        }else{
+          pass_field.type = "password";
+          show_btn.style.color = "green";
+          show_btn.textContent = "Show";
+        }
+      });
+
+</script>
+
+
+</body>
+</html>
