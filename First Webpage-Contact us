@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">  <!--META DATA-->
+<meta http-equiv="X-UA-Compatible"content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<title>Contact us fresh</title> <!--TITLE-->
+
+<style>
+ 
+*{ margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: Cambria;
+ }
+
+ section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      width: 100%;
+      background-image:url(./images/background1.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+}
+
+.navbar{
+        background: black;
+        background-position: fixed;
+        height: 80px;
+        width: 100%;
+       }
+nav{
+    background: black;
+    height: 80px;
+    width: 100%;
+ }
+ 
+nav ul{
+    float: right;
+    margin-right: 33vw;      /* POSITION CONTROL OF HOME, ABOUT, CONTACT, LOGIN */
+}
+nav ul li{
+    display: inline-block;
+     line-height: 80px;
+     margin: 0 5px;
+}
+nav ul li a{
+     color: white;
+     font-size: 17px;
+     padding: 7px 25px;
+     border-radius: 3px;
+     text-transform: uppercase;
+      text-decoration: none;
+     list-style: none;
+     box-sizing: border-box;
+}
+a.active,a:hover{
+        background: none;
+        color: gray;
+       transition: .5s;
+}
+.checkbtn{
+font-size: 30px;
+color: white;
+float:right;
+line-height: 80px;
+margin-right: 40px;
+cursor: pointer;
+}
+#check{
+  display: none;
+}
+
+@media (max-width: 900px){
+nav ul li a{
+    font-size: 16px;
+}
+}
+@media (max-width: 800px){
+     .checkbtn{
+        display: block;
+}
+ul{
+   position: fixed; 
+   width: 100%;
+   height: 100vh;
+   background-image: url(./images/sliding3.png);    /* SLIDING PROPERTY */
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
+   top: 80px;
+   left: -100%;
+   text-align: center;
+   transition: all .7s;
+}
+nav ul li{
+display: block;
+margin: 10vw 0;
+line-height: 1vh;   /* POSITION CONTROL OF SLIDING ITEMS */
+}
+nav ul li a{
+font-size: 3vw;
+}
+a:hover, a.active{
+  background: none;
+  color: yellow;
+}
+ #check:checked ~ ul{
+  left: 0; 
+}
+}
+
+
+
+
+.container {
+       position: relative;
+       z-index: 1000;
+       width: 100%;
+       max-width: 1000px;
+       padding: 50px;
+       background: rgba(255,255,255,0.1);
+       box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+       border: 1px solid rgba(255,255,255,0.25);
+       border-right: 1px solid rgba(255,255,255,0.1);
+       border-bottom: 1px solid rgba(255,255,255,0.1);
+       border-radius: 10px;
+       overflow: hidden;
+       backdrop-filter: blur(25px);
+}
+
+.container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -40%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255,255,255,0.05);
+        pointer-events: none;
+        transform: skew(-15deg);
+}       
+
+.container h2 {
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-size: 36px;
+        margin-bottom: 20px;
+}
+ 
+.container .row100 {
+        position: relative;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+}
+
+.container .row100 .col {
+        position: relative;
+        width: 100%;
+        padding: 0 10px;
+        margin: 30px 0 20px;
+}
+
+.container .row100 .col .inputBox {
+        position: relative;
+        width: 100%;
+        height: 40px;
+        color: white;
+}
+
+.container .row100 .col .inputBox input,
+.container .row100 .col .inputBox textarea
+{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background:transparent;
+        box-shadow: none;
+        border: none;
+        outline: none;
+        font-size: 15px;
+        padding: 0 10px;
+        z-index: 1;
+        color: black;
+}
+
+.container .row100 .col .inputBox .text
+{
+        position: absolute;
+        top: 0;
+        left: 0;
+        line-height: 40px;
+        font-size: 18px;
+        padding: 0 10px;
+        display: block;
+        transition: 0.5s;
+        pointer-events: none;
+}
+
+.container .row100 .col .inputBox input:focus + .text,
+.container .row100 .col .inputBox input:valid + .text,
+.container .row100 .col .inputBox textarea:focus + .text,
+.container .row100 .col .inputBox textarea:valid + .text
+{
+
+         top: -35px;
+         left: -10px;
+}
+ 
+.container .row100 .col .inputBox .line
+{
+         position: absolute;
+         bottom: 0;
+         display: block;
+         width: 100%;
+         height: 2px;
+         background: white;
+         transtion: 0.5s;
+         border-radius: 2px;
+         pointer-events: none;
+}
+
+.container .row100 .col .inputBox input:focus ~ .line,
+.container .row100 .col .inputBox input:valid ~ .line
+{
+         height: 100%;
+
+}
+
+.container .row100 .col .inputBox.textarea
+{
+        position: relative;
+        width: 100%;
+        height: 100px;
+        padding: 10px 0;
+}
+.container .row100 .col .inputBox textarea:focus ~ .line,
+.container .row100 .col .inputBox textarea:valid ~ .line
+{
+         height: 100%;
+
+}
+
+.container .row100 .col input[type="submit"]
+{
+        border: none;
+        padding: 10px 40px;
+        cursor: pointer;
+        outline: none;
+        background: white;
+        color: black;
+        font-weight: 600;
+        font-size: 18px;
+        border-radius: 2px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<input type="checkbox" id="check">
+<label for="check" class="checkbtn">
+<i class="fas fa-bars"></i>
+</label>
+
+<ul>
+<li><a class="" href="file:///D:/SK/my%20website/Wabpage%201/1.Home%20fresh.html">Home</a></li>
+<li><a class="" href="#">About</a></li>
+<li><a class="active" href="file:///D:/SK/my%20website/Wabpage%201/2.Contact%20us%20fresh.html">Contact us</a></li>
+<li><a class="" href="file:///D:/SK/my%20website/Wabpage%201/3.Login%20fresh.html">Login</a></li>
+<li><a class="" href="file:///D:/SK/my%20website/Wabpage%201/4.Sign%20up%20fresh.html">Sign Up</a></li>
+</ul>
+</nav>
+</header>
+
+
+<section>
+<div class="container">
+<h2>Contact Us</h2>
+
+<div class="row100">
+
+<div class="col">
+<div class="inputBox">
+    <input type="text" name="" required="required">
+    <span class="text">First Name</span>
+    <span class="line"></span>
+</div>
+</div>
+
+<div class="col">
+<div class="inputBox">
+    <input type="text" name="" required="required">
+    <span class="text">Last Name</span>
+    <span class="line"></span>
+</div>
+</div>
+
+<div class="col">
+<div class="inputBox">
+    <input type="text" name="" required="required">
+    <span class="text">Email Id</span>
+    <span class="line"></span>
+</div>
+</div>
+
+<div class="col">
+<div class="inputBox">
+    <input type="text" name="" required="required">
+    <span class="text">Mobile No.</span>
+    <span class="line"></span>
+</div>
+</div>
+
+</div>
+  
+   <div class="row100">
+           <div class="col">
+              <div class="inputBox textarea">
+                  <textarea required="required"></textarea> 
+                  <span class="text">Type your message here...</span>
+                  <span class="line"></span>
+                     
+              </div>
+           
+           </div>
+
+   <br> 
+   <div class="row100">
+           <div class="col">
+           <input type="submit" value="send">
+           </div>
+           
+   </div>
+
+
+</div>
+
+</section>
+
+</body>
+
+</html>
