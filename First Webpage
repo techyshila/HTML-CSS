@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">  <!--META DATA-->
+<meta http-equiv="X-UA-Compatible"content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">   <!--TITTLE FONT-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Caveat+Brush&family=Chewy&display=swap" rel="stylesheet"> <!--NAVIGATION BAR FONT-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">  <!--DESCRIPTION FONT-->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<title>Home fresh</title> <!--TITLE-->
+
+<style>
+ *{margin:0; 
+   padding: 0;
+   }
+body{
+      font-family: 'PT Serif', serif;
+      background-image:url(./images/home.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+     /* height: calc(100vh - 80px); */
+      height: 100vh; 
+ }
+nav{
+    background: black;
+    height: 80px;
+    width: 100%;
+ }
+ 
+nav ul{
+    float: right;
+    margin-right: 33vw;      /* POSITION CONTROL OF HOME, ABOUT, CONTACT, LOGIN */
+}
+nav ul li{
+    display: inline-block;
+     line-height: 80px;
+     margin: 0 5px;
+}
+nav ul li a{
+     color: white;
+     font-size: 17px;
+     padding: 7px 25px;
+     border-radius: 3px;
+     text-transform: uppercase;
+      text-decoration: none;
+     list-style: none;
+     box-sizing: border-box;
+}
+a.active,a:hover{
+        background: none;
+        color: gray;
+       transition: .5s;
+}
+.checkbtn{
+font-size: 30px;
+color: white;
+float:right;
+line-height: 80px;
+margin-right: 40px;
+cursor: pointer;
+}
+#check{
+  display: none;
+}
+@media (max-width: 900px){
+nav ul li a{
+    font-size: 16px;
+}
+}
+@media (max-width: 800px){
+     .checkbtn{
+        display: block;
+}
+ul{
+   position: fixed; 
+   width: 100%;
+   height: 100vh;
+   background-image: url(./images/sliding3.png);    /* SLIDING PROPERTY */
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
+   top: 80px;
+   left: -100%;
+   text-align: center;
+   transition: all .7s;
+}
+nav ul li{
+display: block;
+margin: 10vw 0;
+line-height: 1vh;   /* POSITION CONTROL OF SLIDING ITEMS */
+}
+nav ul li a{
+font-size: 3vw;
+}
+a:hover, a.active{
+  background: none;
+  color: yellow;
+}
+ #check:checked ~ ul{
+  left: 0; 
+}
+}
+section{
+     /* background-image: url(./images/space.png); 
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: calc(100vh - 80px);*/
+}
+
+ 
+.glow {
+  font-family: 'Caveat Brush', cursive;
+  font-size: 7vw;
+  color: rgb(255, 255, 0);
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+     }
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+       }
+  to   {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+       }
+}
+
+
+.description {
+         text-align: center;
+         color: white;
+         font-family: 'Vollkorn', serif;
+         font-size: 2vw;
+         front-weight: normal;
+         color: white;
+         padding: 0.5em 15em;
+         display: flex;
+         align-items: center;
+            }
+
+.description p {
+  color: white;
+  font-size: 0.9em;
+  font-weight: 500;
+  width: 0;
+  max-width: max-content;
+  overflow: hidden; 
+  border-right: .05em solid black; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0; /* Gives that scrolling effect as the typing happens */
+  text-align: center;
+}
+
+.typing-erase {
+  animation: 
+    5s typing-erase 2s steps(75, end) infinite,
+    blink-caret .5s step-end infinite;
+}
+
+/* The type and erase effect */
+@keyframes typing-erase {
+ 0% { width: 0 }
+  80% { width: 125% }
+  90%, 100% { width: 0 }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: gray }
+}
+  
+.btn{
+      cursor: pointer;
+      color: yellow;
+      background-color: black;
+      /*background: transparent;*/
+      font-size: 1vw;
+      padding: 1vh 2vw;
+      border: 0.2vw solid orange;
+      border-radius: 2vw;
+      font-family: Cambria;
+      text-decoration: none;
+      text-align: center;
+      font-weight: bold;
+      margin: 3vh 5vw;         /* POSITION CONTROL OF VISIT MY CHANNEL & EXPLORE */
+      white-space: nowrap;
+   }
+
+      .content{
+     text-align: center;
+     margin-top: 0.5%;
+     }
+
+.btn:hover{
+color: white;
+background: green;
+}
+.btn a:link{
+color: white;
+text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+<header>
+<nav>
+<input type="checkbox" id="check">
+<label for="check" class="checkbtn">
+<i class="fas fa-bars"></i>
+</label>
+
+<ul>
+<li><a class="active" href="file:///D:/SK/my%20website/Wabpage%201/1.Home%20fresh.html">Home</a></li>
+<li><a class="" href="#">About</a></li>
+<li><a class="" href="file:///D:/SK/my%20website/Wabpage%201/2.Contact%20us%20fresh.html">Contact us</a></li>
+<li><a class="" href="file:///D:/SK/my%20website/Wabpage%201/3.Login%20fresh.html">Login</a></li>
+<li><a class="" href="file:///D:/SK/my%20website/Wabpage%201/4.Sign%20up%20fresh.html">Sign Up</a></li>
+</ul>
+</nav>
+</header>
+<br /><br /><br /><br /><br /><br /><br /><br /><br />
+<div class="glow">
+<p1>Welcome to SKWeb</p1>
+</div>
+<div class="description"> 
+<p class="typing-erase">An Official Webpage Developed by Shilajit Karmakar</p>
+</div>
+<br>
+
+<div class="content">
+<button class="btn"><a href="https://www.youtube.com/channel/UCrJhpcYGofGqiEa6VVihC_A" target="_main">Visit my Channel</a></button>
+<button class="btn"><a href="https://www.youtube.com/channel/UCrJhpcYGofGqiEa6VVihC_A" target="_main">Explore</a></button>
+</div>
+
+<section></section>
+</body>
+
+</html>
